@@ -11,7 +11,7 @@ const RE_LINE_FEED = /[\n\r]/i;
 //     { type: 'expression', value: 'statement'},
 //     { type: 'keyword', value: 'endif' }
 // ]
-function tokenlize(input = '') {
+function tokenize(input = '') {
     function peekBack(span = 1) {
         const index = i - span;
 
@@ -256,7 +256,7 @@ function generate(ast) {
 }
 
 export function compile(input, vars) {
-    const tokens = tokenlize(input);
+    const tokens = tokenize(input);
     const ast = transform(parse(tokens), regexp(vars));
 
     return generate(ast);
