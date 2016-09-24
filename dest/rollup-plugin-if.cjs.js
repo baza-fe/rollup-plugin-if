@@ -13,7 +13,7 @@ var RE_LINE_FEED = /[\n\r]/i;
 //     { type: 'expression', value: 'statement'},
 //     { type: 'keyword', value: 'endif' }
 // ]
-function tokenlize() {
+function tokenize() {
     var input = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
 
     function peekBack() {
@@ -276,7 +276,7 @@ function generate(ast) {
 }
 
 function compile(input, vars) {
-    var tokens = tokenlize(input);
+    var tokens = tokenize(input);
     var ast = transform$1(parse(tokens), regexp(vars));
 
     return generate(ast);

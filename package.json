@@ -7,7 +7,8 @@
   "scripts": {
     "build": "node build/build.js",
     "test": "ava test/index.js -s",
-    "pretest":"npm run build"
+    "pretest":"npm run build",
+    "prepublish": "npm run test"
   },
   "repository": {
     "type": "git",
