@@ -10,11 +10,11 @@ $ npm install rollup-plugin-if -D
 ## Syntax
 
 ```
-#[statement] [expression]
+#[keyword] [expression]
 
 // javascript code goes here
 
-#end[statement]
+#end[keyword]
 ```
 
 ## Usage
@@ -26,7 +26,10 @@ import instruction from 'rollup-plugin-if';
 rollup({
     entry: 'main.js',
     plugins: [
-        instruction()
+        instruction({
+            FLAG1: true,
+            FLAG2: true
+        })
     ]
 }).then(...);
 ```
@@ -37,22 +40,93 @@ rollup({
 
 ```js
 #if FLAG
-    import * from './mock';
+window.a = 1;
 #endif
 
-import * from './util';
+window.b = 2;
 ```
 
 ```json
 {
-    "DEV": true
+    "FLAG": true
 }
 ```
 
 will yeild:
 
 ```js
-import * from './util';
+window.a = 1;
+window.b = 2;
+```
+
+### if-else-endif
+
+```js
+#if FLAG
+window.a = 1;
+#else
+window.a = 2;
+#endif
+```
+
+```json
+{
+    "FLAG": true
+}
+```
+
+will yeild:
+
+```js
+window.a = 1;
+```
+
+### if-elif-endif
+
+```js
+#if FLAG1
+window.a = 1;
+#elif FLAG2
+window.b = 2;
+#endif
+```
+
+```json
+{
+    "FLAG1": false,
+    "FLAG2": true
+}
+```
+
+will yeild:
+
+```js
+window.b = 2;
+```
+
+### if-elif-else-endif
+
+```js
+#if FLAG1
+window.a = 1;
+#elif FLAG2
+window.b = 2;
+#else
+window.c = 3;
+#endif
+```
+
+```json
+{
+    "FLAG1": false,
+    "FLAG2": false
+}
+```
+
+will yeild:
+
+```js
+window.c = 3;
 ```
 
 
