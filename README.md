@@ -81,29 +81,6 @@ will yeild:
 window.a = 1;
 ```
 
-### if-elif-endif
-
-```js
-#if FLAG1
-window.a = 1;
-#elif FLAG2
-window.b = 2;
-#endif
-```
-
-```json
-{
-    "FLAG1": false,
-    "FLAG2": true
-}
-```
-
-will yeild:
-
-```js
-window.b = 2;
-```
-
 ### if-elif-else-endif
 
 ```js
