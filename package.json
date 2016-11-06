@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-if",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Roll JavaScript with if instructions.",
   "main": "dest/rollup-plugin-if.js",
   "scripts": {
