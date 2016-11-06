@@ -3,6 +3,10 @@ import { readFileSync } from 'fs';
 import { rollup } from 'rollup';
 import instruction from '../';
 
+function squareWhitespace (str) {
+  return str.trim().replace(/[\r\n]/, '')
+}
+
 test('should if statement works', t => {
     return rollup({
         entry: 'fixtures/if/actual',
@@ -15,8 +19,8 @@ test('should if statement works', t => {
         ]
     }).then(bundle => {
         t.is(
-            bundle.generate().code,
-            readFileSync('./fixtures/if/expected.js').toString()
+            squareWhitespace(bundle.generate().code),
+            squareWhitespace(readFileSync('./fixtures/if/expected.js').toString())
         );
     });
 });
@@ -33,8 +37,8 @@ test('should if-else statement works', t => {
         ]
     }).then(bundle => {
         t.is(
-            bundle.generate().code,
-            readFileSync('./fixtures/if-else/expected.js').toString()
+            squareWhitespace(bundle.generate().code),
+            squareWhitespace(readFileSync('./fixtures/if-else/expected.js').toString())
         );
     });
 });
@@ -52,8 +56,8 @@ test('should if-elif statement works', t => {
         ]
     }).then(bundle => {
         t.is(
-            bundle.generate().code,
-            readFileSync('./fixtures/if-elif/expected.js').toString()
+            squareWhitespace(bundle.generate().code),
+            squareWhitespace(readFileSync('./fixtures/if-elif/expected.js').toString())
         );
     });
 });
@@ -71,8 +75,8 @@ test('should if-elif-else statement works', t => {
         ]
     }).then(bundle => {
         t.is(
-            bundle.generate().code,
-            readFileSync('./fixtures/if-elif-else/expected.js').toString()
+            squareWhitespace(bundle.generate().code),
+            squareWhitespace(readFileSync('./fixtures/if-elif-else/expected.js').toString())
         );
     });
 });
