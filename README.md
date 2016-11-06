@@ -1,6 +1,27 @@
 rollup-plugin-if
 =====
 
+<p>
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
+    </a>
+    <a href="https://github.com/baza-fe/rollup-plugin-if/issues">
+        <img src="https://img.shields.io/github/issues/baza-fe/rollup-plugin-if.svg" alt="Issues" />
+    </a>
+    <a href="http://standardjs.com/">
+        <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide" />
+    </a>
+    <a href="https://npmjs.org/package/rollup-plugin-if">
+        <img src="https://img.shields.io/npm/v/rollup-plugin-if.svg?style=flat-squar" alt="NPM" />
+    </a>
+    <a href="https://github.com/baza-fe/rollup-plugin-if/releases">
+        <img src="https://img.shields.io/github/release/baza-fe/rollup-plugin-if.svg" alt="Latest Version" />
+    </a>
+    <a href="https://travis-ci.org/baza-fe/rollup-plugin-if">
+        <img src="https://travis-ci.org/baza-fe/rollup-plugin-if.svg?branch=master" />
+    </a>
+</p>
+
 ## Install
 
 ```bash

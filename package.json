@@ -2,8 +2,7 @@
   "name": "rollup-plugin-if",
   "version": "0.0.1",
   "description": "Roll JavaScript with if instructions.",
-  "main": "dest/rollup-plugin-if.cjs.js",
-  "jsnext:main": "dest/rollup-plugin-if.es.js",
+  "main": "dest/rollup-plugin-if.js",
   "scripts": {
     "build": "node build/build.js",
     "test": "ava test/index.js -s",
