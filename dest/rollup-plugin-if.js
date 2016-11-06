@@ -1,4 +1,6 @@
-import { createFilter } from 'rollup-pluginutils';
+'use strict';
+
+var rollupPluginutils = require('rollup-pluginutils');
 
 var CHAR_SHARP = '#';
 var CHAR_SPACE = ' ';
@@ -12,10 +14,10 @@ var RE_LINE_FEED = /[\n\r]/i;
 //     { type: 'keyword', value: 'endif' }
 // ]
 function tokenize() {
-    var input = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+    var input = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
     function peekBack() {
-        var span = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
+        var span = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
         var index = i - span;
 
@@ -112,7 +114,7 @@ function parse(tokens) {
     }
 
     function peekBack() {
-        var span = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
+        var span = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
 
         var index = i - span;
 
@@ -237,9 +239,9 @@ function transform$1(ast, replacers) {
         }
 
         for (var key in replacers) {
-            var _replacers$key = replacers[key];
-            var _regexp = _replacers$key.regexp;
-            var expect = _replacers$key.expect;
+            var _replacers$key = replacers[key],
+                _regexp = _replacers$key.regexp,
+                expect = _replacers$key.expect;
 
 
             _regexp.lastIndex = 0;
@@ -252,7 +254,7 @@ function transform$1(ast, replacers) {
 
 function generate(ast) {
     function exec() {
-        var statement = arguments.length <= 0 || arguments[0] === undefined ? 'true' : arguments[0];
+        var statement = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'true';
 
         return new Function('return ' + statement + ';')();
     }
@@ -281,9 +283,9 @@ function compile(input, vars) {
 }
 
 function plugin() {
-    var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-    var filter = createFilter(options.include || ['**/*.js'], options.exclude || 'node_modules/**');
+    var filter = rollupPluginutils.createFilter(options.include || ['**/*.js'], options.exclude || 'node_modules/**');
 
     return {
         transform: function transform(code, id) {
@@ -299,4 +301,4 @@ function plugin() {
     };
 }
 
-export default plugin;
+module.exports = plugin;

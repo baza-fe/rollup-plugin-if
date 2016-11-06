@@ -13,6 +13,6 @@ rollup.rollup({
 }).then((bundle) => {
     bundle.write({
         dest: 'dest/rollup-plugin-if.js',
-        format: 'es'
+        format: 'cjs'
     });
 }).catch(console.error);
