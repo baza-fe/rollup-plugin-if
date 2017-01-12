@@ -5,20 +5,20 @@ rollup-plugin-if
     <a href="LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
     </a>
-    <a href="https://github.com/baza-fe/rollup-plugin-if/issues">
-        <img src="https://img.shields.io/github/issues/baza-fe/rollup-plugin-if.svg" alt="Issues" />
+    <a href="https://github.com/differui/rollup-plugin-if/issues">
+        <img src="https://img.shields.io/github/issues/differui/rollup-plugin-if.svg" alt="Issues" />
     </a>
     <a href="http://standardjs.com/">
         <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide" />
     </a>
-    <a href="https://npmjs.org/package/rollup-plugin-if">
+    <a href="https://npmjs.org/package/rollup
         <img src="https://img.shields.io/npm/v/rollup-plugin-if.svg?style=flat-squar" alt="NPM" />
     </a>
-    <a href="https://github.com/baza-fe/rollup-plugin-if/releases">
-        <img src="https://img.shields.io/github/release/baza-fe/rollup-plugin-if.svg" alt="Latest Version" />
+    <a href="https://github.com/differui/rollup-plugin-if/releases">
+        <img src="https://img.shields.io/github/release/differui/rollup-plugin-if.svg" alt="Latest Version" />
     </a>
-    <a href="https://travis-ci.org/baza-fe/rollup-plugin-if">
-        <img src="https://travis-ci.org/baza-fe/rollup-plugin-if.svg?branch=master" />
+    <a href="https://travis-ci.org/differui/rollup-plugin-if">
+        <img src="https://travis-ci.org/differui/rollup-plugin-if.svg?branch=master" />
     </a>
 </p>
 
@@ -80,7 +80,7 @@ window.a = 1;
 window.b = 2;
 ```
 
-### if-else-endif
+### `if`-`else`-`endif`
 
 ```js
 #if FLAG
@@ -102,7 +102,7 @@ will yeild:
 window.a = 1;
 ```
 
-### if-elif-else-endif
+### `if`-`elif`-`else`-`endif`
 
 ```js
 #if FLAG1
